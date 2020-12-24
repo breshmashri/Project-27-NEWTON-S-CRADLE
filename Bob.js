@@ -1,10 +1,9 @@
 class Bob {
     constructor(x, y, r) {
 	var options = {
-	  isStatic:false,
-	  restitution:0.3,
-	  friction:0.5,
-	  density:1.2
+	  restitution:1,
+	  friction:0.3,
+	  density:0.8
     }
 	  this.x = x;
 	  this.y = y;
@@ -13,12 +12,7 @@ class Bob {
 	  World.add(world, this.body);
     }
 	display() {
-	  var bobpos = this.body.position;		
-        push()
-		translate(bobpos.x, bobpos.y);
-		rectMode(CENTER)
-		strokeWeight(3);
-		fill(255,0,255);
-		pop()
+		var bobpos = this.body.position;
+		ellipse(bobpos.x, bobpos.y, this.r);
 	}		
 }
